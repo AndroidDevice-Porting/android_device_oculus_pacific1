@@ -6,4 +6,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/omni_pacific.mk
+    $(LOCAL_DIR)/lineage_pacific.mk
