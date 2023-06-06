@@ -55,7 +55,7 @@ TARGET_KERNEL_CONFIG := pacific_defconfig
 TARGET_KERNEL_SOURCE := kernel/oculus/pacific
 
 # Kernel - prebuilt
-TARGET_FORCE_PREBUILT_KERNEL := true
+TARGET_FORCE_PREBUILT_KERNEL := false
 ifeq ($(TARGET_FORCE_PREBUILT_KERNEL),true)
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel
 endif
