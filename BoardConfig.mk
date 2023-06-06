@@ -19,6 +19,7 @@ TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_ABI2 := 
+# TARGET_CPU_VARIANT could have been kyro but Android N bionic does not support it yet.
 TARGET_CPU_VARIANT := generic
 TARGET_CPU_VARIANT_RUNTIME := generic
 
