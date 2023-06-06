@@ -53,6 +53,9 @@ BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 TARGET_KERNEL_CONFIG := pacific_defconfig
 TARGET_KERNEL_SOURCE := kernel/oculus/pacific
+TARGET_KERNEL_ARCH := arm64
+TARGET_KERNEL_HEADER_ARCH := arm64
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 
 # Kernel - prebuilt
 TARGET_FORCE_PREBUILT_KERNEL := false
