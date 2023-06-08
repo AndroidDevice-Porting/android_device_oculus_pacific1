@@ -9,6 +9,8 @@ LOCAL_PATH := device/oculus/pacific
 
 PRODUCT_PLATFORM := msm8996
 
+PRODUCT_SHIPPING_API_LEVEL := 25
+
 # A/B OTA support
 AB_OTA_UPDATER := true
 
