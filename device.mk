@@ -9,7 +9,13 @@ LOCAL_PATH := device/oculus/pacific
 
 PRODUCT_PLATFORM := msm8996
 
-# A/B support
+# A/B OTA support
+AB_OTA_UPDATER := true
+
+AB_OTA_PARTITIONS += \
+    boot \
+    system
+
 PRODUCT_PACKAGES += \
     otapreopt_script \
     cppreopts.sh \
