@@ -20,7 +20,8 @@ PRODUCT_PACKAGES += \
     otapreopt_script \
     cppreopts.sh \
     update_engine \
-    update_verifier
+    update_verifier \
+    libsparse_static
 
 PRODUCT_PACKAGES += \
     bootctrl.msm8996 \
