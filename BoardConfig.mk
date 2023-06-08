@@ -11,7 +11,6 @@ DEVICE_PATH := device/oculus/pacific
 AB_OTA_UPDATER := true
 AB_OTA_PARTITIONS += \
     boot \
-    modem \
     system
 
 # Architecture
