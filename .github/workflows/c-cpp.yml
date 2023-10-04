@@ -1,0 +1,25 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: [ "exp/cm-14.1" ]
+  pull_request:
+    branches: [ "exp/cm-14.1" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: dependencies
+      run: sudo apt install bison build-essential curl flex git gnupg gperf libesd0-dev liblz4-tool libncurses5-dev libsdl1.2-dev libwxgtk2.8-dev libxml2 libxml2-utils lzop maven openjdk-8-jdk pngcrush schedtool squashfs-tools xsltproc zip zlib1g-dev g++-multilib gcc-multilib lib32ncurses5-dev lib32readline-gplv2-dev lib32z1-dev
+    - name: repo setup
+      run: mkdir -p ~/bin && mkdir -p ~/android/system && curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo && chmod a+x ~/bin/repo
+    - name: clone android
+      run: cd ~/android/system/ && repo init -u https://github.com/LineageOS/android.git -b cm-14.1 && repo sync -j10
+    - name: clone android sources
+      run: cd ~/android/system && git clone https://github.com/AndroidDevice-Porting/android_device_oculus_pacific1 device/oculus/pacific && git clone https://github.com/WolfLink115/android_vendor_oculus_pacific vendor/oculus/pacific && git clone https://github.com/WolfLink115/android_kernel_oculus_pacific kernel/oculus/pacific
+    - name: env setup & build
+      run: source build/envsetup.sh && breakfast pacific && export USE_CCACHE=1 && prebuilts/misc/linux-x86/ccache/ccache -M 50G && croot && brunch pacific
